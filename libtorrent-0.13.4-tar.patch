@@ -907,7 +907,6 @@ diff -Nur libtorrent-tar/src/net/socket_fd.cc libtorrent-tar-ipv6/src/net/socket
 +#ifdef RAK_USE_INET6
 +  m_fd = socket(rak::socket_address::pf_inet6, SOCK_STREAM, IPPROTO_TCP);
 +  if (m_fd == -1) {
-+    printf("Unable to open ipv6 socket\n");
 +    m_ipv6_socket = false;
 +    return (m_fd = socket(rak::socket_address::pf_inet, SOCK_STREAM, IPPROTO_TCP)) != -1;
 +  }
@@ -949,7 +948,7 @@ diff -Nur libtorrent-tar/src/net/socket_fd.cc libtorrent-tar-ipv6/src/net/socket
  }
  
  bool
-@@ -148,6 +189,12 @@
+@@ -148,6 +188,12 @@
  SocketFd::bind(const rak::socket_address& sa) {
    check_valid();
  
@@ -962,7 +961,7 @@ diff -Nur libtorrent-tar/src/net/socket_fd.cc libtorrent-tar-ipv6/src/net/socket
    return !::bind(m_fd, sa.c_sockaddr(), sa.length());
  }
  
-@@ -155,6 +202,12 @@
+@@ -155,6 +201,12 @@
  SocketFd::bind(const rak::socket_address& sa, unsigned int length) {
    check_valid();
  
@@ -975,7 +974,7 @@ diff -Nur libtorrent-tar/src/net/socket_fd.cc libtorrent-tar-ipv6/src/net/socket
    return !::bind(m_fd, sa.c_sockaddr(), length);
  }
  
-@@ -162,10 +215,34 @@
+@@ -162,10 +214,34 @@
  SocketFd::connect(const rak::socket_address& sa) {
    check_valid();
  
@@ -1010,7 +1009,7 @@ diff -Nur libtorrent-tar/src/net/socket_fd.cc libtorrent-tar-ipv6/src/net/socket
  SocketFd::listen(int size) {
    check_valid();
  
-@@ -177,7 +254,18 @@
+@@ -177,7 +253,18 @@
    check_valid();
    socklen_t len = sizeof(rak::socket_address);
  
