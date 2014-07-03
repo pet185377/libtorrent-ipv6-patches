@@ -900,7 +900,7 @@ diff -Nur libtorrent-tar/src/net/socket_fd.cc libtorrent-tar-ipv6/src/net/socket
    return setsockopt(m_fd, IPPROTO_IP, IP_TOS, &opt, sizeof(opt)) == 0;
  }
  
-@@ -112,12 +117,48 @@
+@@ -112,12 +117,47 @@
  
  bool
  SocketFd::open_stream() {
