@@ -900,7 +900,7 @@ diff -Nur -x '*.git' libtorrent-HEAD/src/net/socket_fd.cc libtorrent-HEAD-ipv6/s
    return setsockopt(m_fd, IPPROTO_IP, IP_TOS, &opt, sizeof(opt)) == 0;
  }
  
-@@ -112,12 +117,48 @@
+@@ -112,12 +117,47 @@
  
  bool
  SocketFd::open_stream() {
@@ -949,7 +949,7 @@ diff -Nur -x '*.git' libtorrent-HEAD/src/net/socket_fd.cc libtorrent-HEAD-ipv6/s
  }
  
  bool
-@@ -148,6 +189,12 @@
+@@ -148,6 +188,12 @@
  SocketFd::bind(const rak::socket_address& sa) {
    check_valid();
  
@@ -962,7 +962,7 @@ diff -Nur -x '*.git' libtorrent-HEAD/src/net/socket_fd.cc libtorrent-HEAD-ipv6/s
    return !::bind(m_fd, sa.c_sockaddr(), sa.length());
  }
  
-@@ -155,6 +202,12 @@
+@@ -155,6 +201,12 @@
  SocketFd::bind(const rak::socket_address& sa, unsigned int length) {
    check_valid();
  
@@ -975,7 +975,7 @@ diff -Nur -x '*.git' libtorrent-HEAD/src/net/socket_fd.cc libtorrent-HEAD-ipv6/s
    return !::bind(m_fd, sa.c_sockaddr(), length);
  }
  
-@@ -162,10 +215,34 @@
+@@ -162,10 +214,34 @@
  SocketFd::connect(const rak::socket_address& sa) {
    check_valid();
  
@@ -1010,7 +1010,7 @@ diff -Nur -x '*.git' libtorrent-HEAD/src/net/socket_fd.cc libtorrent-HEAD-ipv6/s
  SocketFd::listen(int size) {
    check_valid();
  
-@@ -177,7 +254,18 @@
+@@ -177,7 +253,18 @@
    check_valid();
    socklen_t len = sizeof(rak::socket_address);
  
