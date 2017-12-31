@@ -7,3 +7,12 @@ Do not use HEAD if you plan to use ruTorrent.
 
 
 Pre-patched archive (using the latest tar from http://libtorrent.rakshasa.no/downloads/): https://flowerserv.net/upload/libtorrent.tar.gz
+
+这个补丁包存在一行代码的错误
+
+1. 下载
+
+2. patch -p1<lib_ipv6.patch
+
+3. 然后跳转到第123行，删除 printf(“Unable to open ipv6 socket\n”); 
+
