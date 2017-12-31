@@ -907,7 +907,6 @@ diff -Nur -x '*.git' libtorrent-HEAD/src/net/socket_fd.cc libtorrent-HEAD-ipv6/s
 +#ifdef RAK_USE_INET6
 +  m_fd = socket(rak::socket_address::pf_inet6, SOCK_STREAM, IPPROTO_TCP);
 +  if (m_fd == -1) {
-+    printf("Unable to open ipv6 socket\n");
 +    m_ipv6_socket = false;
 +    return (m_fd = socket(rak::socket_address::pf_inet, SOCK_STREAM, IPPROTO_TCP)) != -1;
 +  }
