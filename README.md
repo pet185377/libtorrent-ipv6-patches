@@ -10,7 +10,9 @@ Pre-patched archive (using the latest tar from http://libtorrent.rakshasa.no/dow
 
 这个补丁包存在一行代码的错误
 
-1. 下载
+1. 下载到解压出的libtorrent文件夹中
+
+2. nano 你的相应路径/src/net/socket_fd.cc
 
 2. patch -p1<lib_ipv6.patch
 
